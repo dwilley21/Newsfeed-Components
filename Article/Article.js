@@ -9,9 +9,7 @@ class Article {
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = 'expand'; 
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener('click', (object) => {
-      this.expandArticle()
-  })
+    this.expandButton.addEventListener('click', ()=>this.expandArticle()) 
 }
 
   expandArticle() {
@@ -31,4 +29,6 @@ let articles = document.querySelectorAll('.article');
 // - With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList and create a new instance of Article by passing in each article as a parameter to the Article class.
 // */
 
-articles.forEach( article => new Article(article))
+articles.forEach( article => {
+  return new Article (article)
+});
